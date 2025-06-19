@@ -22,6 +22,7 @@ A setup script is provided to compile the project and install all necessary depe
     ```
 
 2.  **Run the installation script:**
+
     ```bash
     ./installs.sh
     ```
@@ -32,6 +33,22 @@ This script will:
 - Generate the Java parser and lexer from `ToyLang.g4` using ANTLR.
 - Compile all Java source files (`.java` -> `.class`).
 - Install the required Python packages (`pandas`, `matplotlib`, `numpy`) using the `requirements.txt` file.
+
+1.  **Make the compile executable:**
+
+    ```bash
+    chmod +x compile.sh
+
+    ```
+
+2.  **Run the compile script:**
+    ```bash
+    ./compile.sh
+    ```
+
+This script will:
+
+- Compile all Java source files (`.java` -> `.class`).
 
 ## How to Run
 
