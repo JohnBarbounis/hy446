@@ -63,6 +63,8 @@ print_success "Java project built successfully."
 # This step is from the original script and is good practice for users.
 if [ -f "requirements.txt" ]; then
     print_info "Installing Python dependencies from requirements.txt..."
+    python3 -m venv venv
+    source venv/bin/activate
     pip3 install -r requirements.txt
     print_success "Python dependencies installed."
 else

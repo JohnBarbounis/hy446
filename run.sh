@@ -12,4 +12,4 @@ MAIN_CLASS="Main"
 # Run the Java interpreter with the provided script
 # This is the generic version of the run command from the Makefile
 java -cp ".:$ANTLR_JAR" "$MAIN_CLASS" test.toy > plots/results_short_lived.log
-python analyze_results.py plots/results_short_lived.log
+python3 analyze_results.py plots/results_short_lived.log
