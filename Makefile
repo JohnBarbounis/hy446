@@ -10,7 +10,8 @@ clean:
 	rm -f plots/results_short_lived_efficiency_scatter.png
 	rm -f plots/results_short_lived_pauses_histogram.png
 	rm -f plots/results_short_lived_pauses_over_time.png
-	rm -r venv
-	rm -r .venv
+	rm -r -f venv
+	rm -r -f .venv
+	rm -r -f .antlr
 
 

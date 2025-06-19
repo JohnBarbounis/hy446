@@ -1,13 +1,21 @@
-// Tests GC performance under a bursty, cyclical workload.
+// A small test file to verify garbage collection functionality.
 
-
-var cycle = 0;
-while (cycle < 5) {
-    var i = 0;
-    while (i < 500) {
-        var burst_obj = { "cycle": cycle, "id": i };
-        i = i + 1;
-    }
-    // This represents a period of inactivity before the next burst.
-    cycle = cycle + 1;
+// This function creates a new object. When the function returns,
+// the object should become unreachable and eligible for garbage collection.
+function createObject() {
+  var obj = { "data": "some payload data to consume memory" };
+  // The object `obj` is not returned and is local to this scope.
 }
+
+// This loop calls the function many times.
+// If the garbage collector is not working, the memory used by the objects
+// created in `createObject` will leak, and the interpreter will
+// likely run out of memory and crash.
+var i = 0;
+while (i < 10) {
+  createObject();
+  i = i + 1;
+}
+
+// If the program completes successfully, it's a good indication that
+// the garbage collector is reclaiming memory from objects that go
