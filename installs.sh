@@ -71,4 +71,4 @@ else
     print_info "No requirements.txt found, skipping Python dependency installation."
 fi
 
-echo -e "\n\e[1;32mInstallation complete! You can now
+echo -e "\n\e[1;32mInstallation complete! You can now run the project using ./run.sh\e[0m"
