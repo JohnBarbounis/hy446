@@ -1,0 +1,13 @@
+// Tests GC performance under a bursty, cyclical workload.
+
+
+var cycle = 0;
+while (cycle < 5) {
+    var i = 0;
+    while (i < 500) {
+        var burst_obj = { "cycle": cycle, "id": i };
+        i = i + 1;
+    }
+    // This represents a period of inactivity before the next burst.
+    cycle = cycle + 1;
+}
