@@ -1,2 +1,2 @@
-"Folder for the plots"
+Folder for the plots
 
