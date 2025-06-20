@@ -69,44 +69,6 @@ The project includes a simple script to execute a default benchmark and generate
     - Save the benchmark output to `plots/results_short_lived.log`.
     - Automatically run `analyze_results.py` on the log file to generate plots in the `plots/` directory.
 
-## Running Custom Benchmarks and Analysis
-
-To get the most out of the project, you can run any of the provided benchmarks and generate custom reports.
-
-#### Step 1: Run a Benchmark
-
-Execute the Java interpreter, specifying a benchmark file. It's important to redirect the output (`>`) to a log file for analysis.
-
-```bash
-# Create a directory for logs if it doesn't exist
-mkdir -p logs
-
-# Run a specific benchmark and save its output
-java -cp ".:antlr-4.13.2-complete.jar" Main benchmarks/long_lived_benchmark.toy > logs/long_lived.log
-```
-
-#### Step 2: Analyze the Results
-
-Use the provided Python scripts to process the log files.
-
-- **To generate plots:**
-
-  ```bash
-  python3 analyze_results.py logs/long_lived.log
-  ```
-
-  This will create PNG plot images in the `plots/` directory.
-
-- **To generate a comparative Excel report from multiple runs:**
-
-  ```bash
-  # Create a directory for reports
-  mkdir -p reports
-
-  # Run the script on all log files in the 'logs' directory
-  python3 generate_excel_report.py logs/*.log -o reports/full_benchmark_report.xlsx
-  ```
-
 ## Cleaning the Workspace
 
 A `Makefile` is included with a `clean` command to remove all generated files, including compiled classes, logs, and plots.
